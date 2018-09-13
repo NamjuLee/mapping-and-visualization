@@ -1,10 +1,9 @@
 # Data
 
-Type of data
+### type of data
 
 
 
 
-
-data format
+### formats of data
 
