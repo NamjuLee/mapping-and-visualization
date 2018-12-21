@@ -10,6 +10,7 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true
     },
+    "lib" : ["es2015", "es2015.iterable", "dom"],
     "include": [
         "./app/*"
     ],

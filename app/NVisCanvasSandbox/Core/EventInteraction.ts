@@ -4,7 +4,6 @@ export enum MOUSE_TYPE {
     DOWN = 'DOWN',
     MOVE = 'MOVE',
 }
-
 export class MouseEventData {
     x: number = -1; y: number = -1; z: number = -1;
     preX: number = -1; preY: number = -1; preZ: number = -1;
