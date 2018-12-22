@@ -20,8 +20,8 @@ export class Renderer {
     }
     Start(ctx: CanvasRenderingContext2D) {
 
-        for (let j = 0; j < 50; ++j) {
-            for (let i = 0; i < 100; ++i) {
+        for (let j = 0; j < 10; ++j) {
+            for (let i = 0; i < 10; ++i) {
                 const p = new NPoint(50 + (i * 10), 100 + (j * 10));
                 this.p.push(p);
             }
