@@ -10,7 +10,8 @@
         "start": "npm-run-all -p dev-html dev-ts",
         "dev-html": "lite-server .",
         "dev-ts": "tsc -w",
-        "lint": "tslint './app/*.ts'"
+        "lint": "tslint './app/*.ts'",
+        "build": "tsc"
     },
     "keywords": [
         "esri",

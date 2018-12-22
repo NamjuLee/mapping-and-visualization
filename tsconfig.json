@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "outDir": "build/app",
         "module": "amd",
         "noImplicitAny": true,
         "sourceMap": true,
