@@ -13,13 +13,13 @@ export class Renderer {
         // console.log(x, y);
     }
     MousePress(x: number, y: number) {
-        new NPoint(x, y);
+        const p = new NPoint(x, y);
+        this.p.push(p);
     }
     KeyPress(k: string) {
         console.log(k);
     }
     Start(ctx: CanvasRenderingContext2D) {
-
         for (let j = 0; j < 10; ++j) {
             for (let i = 0; i < 10; ++i) {
                 const p = new NPoint(50 + (i * 10), 100 + (j * 10));
@@ -28,7 +28,6 @@ export class Renderer {
         }
     }
     Render(ctx: CanvasRenderingContext2D) {
-
         for (let i = 0; i < this.p.length; ++i) {
             this.p[i].Render(ctx);
         }

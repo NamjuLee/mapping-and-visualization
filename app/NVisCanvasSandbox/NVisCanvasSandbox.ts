@@ -33,7 +33,7 @@ export class NVisCanvasSandbox {
             this.projection = new NJSAPI.NVisCanvasSandbox.Projection(this);
             this.renderer = new Renderer(this);
             this.canvas = new NJSAPI.NVisCanvasSandbox.Canvas(this)
-        }, 8000);
+        }, 4000);
 
     }
     MouseEvent(m: NJSAPI.NVisCanvasSandbox.MouseEventData) {

@@ -19,5 +19,4 @@ const view = new MapView({
     center: [ -118.244,34.052 ],
     zoom: 12
   });
-
 NVisCanvasSandbox.StartApp(map, view);
