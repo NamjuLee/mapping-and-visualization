@@ -20,6 +20,7 @@ export class NVisCanvasSandbox {
     eventInteraction: EventInteraction;
     static StartApp(map: EsriMap, mapView: MapView) {
         new NVisCanvasSandbox(map, mapView);
+        console.log('hello world');
     }
     constructor(map: EsriMap, mapView: MapView) {
         NVisCanvasSandbox.app = this;

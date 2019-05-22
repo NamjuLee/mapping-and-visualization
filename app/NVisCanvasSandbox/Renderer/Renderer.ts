@@ -6,6 +6,8 @@ export class Renderer {
 
     p: NPoint[] = [];
 
+    num: number = 0;
+
     constructor(nVisCanvasSandbox: NVisCanvasSandbox) {
         this.nVisCanvasSandbox = nVisCanvasSandbox;
     }
@@ -20,14 +22,17 @@ export class Renderer {
         console.log(k);
     }
     Start(ctx: CanvasRenderingContext2D) {
-        for (let j = 0; j < 10; ++j) {
-            for (let i = 0; i < 10; ++i) {
+        // console.log('init');
+        for (let j = 0; j < 15; ++j) {
+            for (let i = 0; i < 15; ++i) {
                 const p = new NPoint(50 + (i * 10), 100 + (j * 10));
                 this.p.push(p);
             }
         }
     }
     Render(ctx: CanvasRenderingContext2D) {
+        // console.log('loop', this.num);
+        // this.num++;
         for (let i = 0; i < this.p.length; ++i) {
             this.p[i].Render(ctx);
         }
