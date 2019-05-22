@@ -16,7 +16,7 @@ const map = new EsriMap({
 const view = new MapView({
     map: map,
     container: "viewDiv",
-    center: [ -118.244,34.052 ], //  37.520795, 127.007914
-    zoom: 12
+    center: [ -100.244,34.052 ], //  37.520795, 127.007914
+    zoom: 3
   });
 NVisCanvasSandbox.StartApp(map, view);
