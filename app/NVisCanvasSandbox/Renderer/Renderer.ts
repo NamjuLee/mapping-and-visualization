@@ -15,8 +15,7 @@ export class Renderer {
         // console.log(x, y);
     }
     MousePress(x: number, y: number) {
-        const p = new NPoint(x, y);
-        this.p.push(p);
+        console.log(x, y);
     }
     KeyPress(k: string) {
         console.log(k);

@@ -4,7 +4,7 @@ import Point = require('esri/geometry/Point');
 import ScreenPoint = require('esri/geometry/ScreenPoint');
 
 import { NJSAPI, EventInteraction } from './Core/index';
-import { Renderer } from './Renderer/Renderer01';
+import { Renderer } from './Renderer/Renderer';
 import { MOUSE_TYPE } from './Core/EventInteraction';
 
 export class NVisCanvasSandbox {
