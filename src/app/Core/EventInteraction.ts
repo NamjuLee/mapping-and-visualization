@@ -1,4 +1,4 @@
-import { NVisCanvasSandbox } from '../NVisCanvasSandbox';
+import NVisCanvasSandbox from '..';
 
 export enum MOUSE_TYPE {
     DOWN = 'DOWN',
@@ -50,24 +50,24 @@ export class KeyboardEventData {
 }
 export class EventInteraction {
     static mouseEventDataPre: MouseEventData;
-    nVisCanvasSandbox: NVisCanvasSandbox
-    constructor(nVisCanvasSandbox: NVisCanvasSandbox) {
-        this.nVisCanvasSandbox = nVisCanvasSandbox;
+    app: NVisCanvasSandbox
+    constructor(app: NVisCanvasSandbox) {
+        this.app = app;
         EventInteraction.mouseEventDataPre = new MouseEventData();
         this.InitArcGISMapEventV4x();
     }
     InitArcGISMapEventV4x() {
-        this.nVisCanvasSandbox.mapView.on('pointer-down', (e: __esri.MapViewPointerDownEvent) => {
+        this.app.mapView.on('pointer-down', (e: __esri.MapViewPointerDownEvent) => {
             const ev = this.CommonEventBuilderArcGIS(e);
             ev.type = MOUSE_TYPE.DOWN;
-            this.nVisCanvasSandbox.MouseEvent(ev);
+            this.app.MouseEvent(ev);
         });
-        this.nVisCanvasSandbox.mapView.on('pointer-move', (e: __esri.MapViewPointerMoveEvent) => {
-            const ev = this.CommonEventBuilderArcGIS(e);
-            ev.type = MOUSE_TYPE.MOVE;
-            this.nVisCanvasSandbox.MouseEvent(ev);
+        this.app.mapView.on('pointer-move', (e: __esri.MapViewPointerMoveEvent) => {
+            // const ev = this.CommonEventBuilderArcGIS(e);
+            // ev.type = MOUSE_TYPE.MOVE;
+            // this.app.MouseEvent(ev);
         });
-        this.nVisCanvasSandbox.mapView.on('key-down', (e: __esri.MapViewKeyDownEvent) => {
+        this.app.mapView.on('key-down', (e: __esri.MapViewKeyDownEvent) => {
             let keyPressed = e.key;
             if (keyPressed.slice(0, 5) === 'Arrow' || e.key === '-' || e.key === '=' || e.key === 'd') {
                 e.stopPropagation();
@@ -78,7 +78,7 @@ export class EventInteraction {
     }
     MouseClickLeftArcGIS(e: __esri.MapViewClickEvent | __esri.MapViewPointerDownEvent) {
         let mEvent = this.CommonEventBuilderArcGIS(e);
-        this.nVisCanvasSandbox.MouseEvent(mEvent);
+        this.app.MouseEvent(mEvent);
     }
     CommonEventBuilderArcGIS(e: __esri.MapViewClickEvent | __esri.MapViewDoubleClickEvent |
         __esri.MapViewPointerUpEvent | __esri.MapViewPointerDownEvent | __esri.MapViewDragEvent): MouseEventData {
@@ -100,7 +100,7 @@ export class EventInteraction {
     }
     KeyDownJSAPI4X(k: KeyboardEvent) {
         let kEventData: KeyboardEventData = this.CommonEventBuilder(k);
-        this.nVisCanvasSandbox.KeyEvent(kEventData);
+        this.app.KeyEvent(kEventData);
     }
     CommonEventBuilder(k: KeyboardEvent): KeyboardEventData {
         let kEvent: KeyboardEventData = new KeyboardEventData();

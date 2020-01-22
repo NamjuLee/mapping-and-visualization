@@ -1,4 +1,4 @@
-import { NVisCanvasSandbox } from '../NVisCanvasSandbox';
+import NVisCanvasSandbox from '..';
 
 export class Canvas {
     t: number;
@@ -37,25 +37,25 @@ export class Canvas {
     theDate: Date;
 
     asyncSafeGuard: number = 0;
-    nVisCanvasSandbox: NVisCanvasSandbox;
+    App: NVisCanvasSandbox;
 
-    constructor(nVisCanvasSandbox: NVisCanvasSandbox) {
-        this.nVisCanvasSandbox = nVisCanvasSandbox;
+    constructor(App: NVisCanvasSandbox) {
+        this.App = App;
         this.canvas = document.createElement('canvas');
-        this.canvas.id = 'nVisCanvasSandbox';
+        this.canvas.id = 'App';
         this.canvas.style.zIndex = '1';
         this.canvas.style.position = 'absolute';
         this.canvas.style.pointerEvents = 'none';
         this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D;
 
-        nVisCanvasSandbox.divHost.appendChild(this.canvas);
+        App.divHost.appendChild(this.canvas);
         this.ctx.globalCompositeOperation = 'source-over';
-        this.canvas.width = nVisCanvasSandbox.divHost.clientWidth;
-        this.canvas.height = nVisCanvasSandbox.divHost.clientHeight;
+        this.canvas.width = App.divHost.clientWidth;
+        this.canvas.height = App.divHost.clientHeight;
         this.Start(this.ctx);
     }
     Start(ctx: CanvasRenderingContext2D) {
-        this.nVisCanvasSandbox.renderer.Start(ctx);
+        this.App.renderer.Start(ctx);
         this.Draw(this.ctx);
     }
     Draw(ctx: CanvasRenderingContext2D) {
@@ -63,13 +63,15 @@ export class Canvas {
 
         this.Clear(ctx);
         this.Render(ctx);
+        // console.log('lpop');
+        // console.log(this);
 
     }
     Clear(ctx: CanvasRenderingContext2D) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     }
     Render(ctx: CanvasRenderingContext2D) {
-        this.nVisCanvasSandbox.renderer.Render(ctx);
+        this.App.renderer.Render(ctx);
         // for (let i = 0; i < this.rendererArray.length; ++i) { this.rendererArray[i].Render(ctx); }
     }
     ResizeCanvas(width: number, height: number) {
