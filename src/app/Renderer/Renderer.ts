@@ -1,4 +1,4 @@
-import NVisCanvasSandbox  from '..';
+import NVisCanvasSandbox from '..';
 import { NPoint } from './Geometry/NPoint';
 
 export class Renderer {
@@ -12,10 +12,11 @@ export class Renderer {
         this.app = app;
     }
     public MouseMove(x: number, y: number) {
-        // console.log(x, y);
+        console.log(x, y);
     }
     public MousePress(x: number, y: number) {
         const p = new NPoint(this, x, y);
+        console.log('mouse press')
         this.p.push(p);
     }
     public KeyPress(k: string) {
@@ -23,8 +24,8 @@ export class Renderer {
     }
     public Start(ctx: CanvasRenderingContext2D) {
         console.log('init');
-        for (let j = 0; j < 2; ++j) {
-            for (let i = 0; i < 2; ++i) {
+        for (let j = 0; j < 10; ++j) {
+            for (let i = 0; i < 10; ++i) {
                 const p = new NPoint(this, 50 + (i * 10), 100 + (j * 10));
                 this.p.push(p);
             }

@@ -63,9 +63,9 @@ export class EventInteraction {
             this.app.MouseEvent(ev);
         });
         this.app.mapView.on('pointer-move', (e: __esri.MapViewPointerMoveEvent) => {
-            // const ev = this.CommonEventBuilderArcGIS(e);
-            // ev.type = MOUSE_TYPE.MOVE;
-            // this.app.MouseEvent(ev);
+            const ev = this.CommonEventBuilderArcGIS(e);
+            ev.type = MOUSE_TYPE.MOVE;
+            this.app.MouseEvent(ev);
         });
         this.app.mapView.on('key-down', (e: __esri.MapViewKeyDownEvent) => {
             let keyPressed = e.key;

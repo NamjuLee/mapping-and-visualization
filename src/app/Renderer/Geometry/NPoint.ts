@@ -39,11 +39,11 @@ export class NPoint extends NGeometryBase {
     }
     public Render(ctx: CanvasRenderingContext2D, radius: number = 3) {
         this.UpdateScreenVecForPan();
-        const ani = (Math.cos(this.t) + 1.1 ) * 3;
+        const ani = (Math.cos(this.t) + 1.1) * 3;
         ctx.beginPath();
         if (this.isHover) {
             ctx.fillStyle = '#ff0000';
-            ctx.arc(this.vec.x, this.vec.y, radius + 2 +  ani, 0, 3.14 * 2);
+            ctx.arc(this.vec.x, this.vec.y, radius + 2 + ani, 0, 3.14 * 2);
         } else {
             ctx.fillStyle = this.col;
             ctx.arc(this.vec.x, this.vec.y, radius + ani, 0, 3.14 * 2);

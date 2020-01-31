@@ -4,7 +4,8 @@ import Point from 'esri/geometry/Point';
 
 import { NJSAPI, EventInteraction } from './Core/index';
 import { MOUSE_TYPE } from './Core/EventInteraction';
-import { Renderer } from './Renderer/Renderer01';
+
+import { Renderer } from './Renderer/Renderer';
 
 export default class NVisCanvasSandbox {
     mapView: MapView;
@@ -21,8 +22,8 @@ export default class NVisCanvasSandbox {
     }
     constructor(view: MapView) {
         this.mapView = view;
-        this.map = view.map; 
-        this.mPoint = this.mapView.toMap({x: 0, y:0 });
+        this.map = view.map;
+        this.mPoint = this.mapView.toMap({ x: 0, y: 0 });
         this.divHost = this.mapView.container as HTMLElement;
 
         this.eventInteraction = new EventInteraction(this);
