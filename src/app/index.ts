@@ -2,10 +2,11 @@ import MapView from 'esri/views/MapView';
 import ArcGISMap from 'esri/Map';
 import Point from 'esri/geometry/Point';
 
+import { ArcGIS } from './Core/ArcGIS';
 import { NJSAPI, EventInteraction } from './Core/index';
 import { MOUSE_TYPE } from './Core/EventInteraction';
 
-import { Renderer } from './Renderer/Renderer';
+import { Renderer } from './Renderer/Renderer01';
 
 export default class NVisCanvasSandbox {
     mapView: MapView;
@@ -13,6 +14,7 @@ export default class NVisCanvasSandbox {
     mPoint: Point;
     divHost: HTMLElement;
 
+    arcGIS: ArcGIS;
     canvas: NJSAPI.NVisCanvasSandbox.Canvas;
     projection: NJSAPI.NVisCanvasSandbox.Projection;
     eventInteraction: EventInteraction;
@@ -30,6 +32,7 @@ export default class NVisCanvasSandbox {
         this.projection = new NJSAPI.NVisCanvasSandbox.Projection(this);
         this.renderer = new Renderer(this);
         this.canvas = new NJSAPI.NVisCanvasSandbox.Canvas(this);
+        this.arcGIS = new ArcGIS(this);
     }
     public MouseEvent(m: NJSAPI.NVisCanvasSandbox.MouseEventData) {
         if (m.type === MOUSE_TYPE.DOWN) { this.renderer.MousePress(m.x, m.y); }
