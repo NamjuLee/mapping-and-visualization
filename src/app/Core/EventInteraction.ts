@@ -3,6 +3,8 @@ import NVisCanvasSandbox from '..';
 export enum MOUSE_TYPE {
     DOWN = 'DOWN',
     MOVE = 'MOVE',
+    CLICK = 'CLICK',
+    DRAG = 'DRAG',
 }
 export class MouseEventData {
     x: number = -1; y: number = -1; z: number = -1;
@@ -60,6 +62,16 @@ export class EventInteraction {
         this.app.mapView.on('pointer-down', (e: __esri.MapViewPointerDownEvent) => {
             const ev = this.CommonEventBuilderArcGIS(e);
             ev.type = MOUSE_TYPE.DOWN;
+            this.app.MouseEvent(ev);
+        });
+        this.app.mapView.on('click', (e: __esri.MapViewPointerDownEvent) => {
+            const ev = this.CommonEventBuilderArcGIS(e);
+            ev.type = MOUSE_TYPE.CLICK;
+            this.app.MouseEvent(ev);
+        });
+        this.app.mapView.on('pointer-drag', (e: __esri.MapViewPointerDownEvent) => {
+            const ev = this.CommonEventBuilderArcGIS(e);
+            ev.type = MOUSE_TYPE.DRAG;
             this.app.MouseEvent(ev);
         });
         this.app.mapView.on('pointer-move', (e: __esri.MapViewPointerMoveEvent) => {

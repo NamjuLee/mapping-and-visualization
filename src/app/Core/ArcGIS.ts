@@ -9,11 +9,15 @@ export class ArcGIS {
     }
     public AppendMapViewEvent() {
         this.app.mapView.watch('extent', () => {
-            console.log('extent')
+            // console.log('extent')
             //
         });
         this.app.mapView.watch('stationary', (e: boolean) => {
-            console.log('stationary')
+            // console.log('stationary')
+
+            // console.log(e);
+
+            this.app.renderer.isStationary = !e;
             //
         });
         this.app.mapView.watch('ready', (e: boolean) => {

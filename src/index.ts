@@ -20,8 +20,8 @@ const view = new MapView({
       wkid: 102100
     },
   },
-  center: [ -100.244,34.052 ],
-  zoom: 3
+  center: [ -73.244,42.052 ],
+  zoom: 5
 });
 view.when( ()=> {
   // console.log(mp);

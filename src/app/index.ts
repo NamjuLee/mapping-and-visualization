@@ -6,7 +6,7 @@ import { ArcGIS } from './Core/ArcGIS';
 import { NJSAPI, EventInteraction } from './Core/index';
 import { MOUSE_TYPE } from './Core/EventInteraction';
 
-import { Renderer } from './Renderer/Renderer01';
+import { Renderer } from './Renderer/RendererClustering';
 
 export default class NVisCanvasSandbox {
     mapView: MapView;
@@ -35,7 +35,8 @@ export default class NVisCanvasSandbox {
         this.arcGIS = new ArcGIS(this);
     }
     public MouseEvent(m: NJSAPI.NVisCanvasSandbox.MouseEventData) {
-        if (m.type === MOUSE_TYPE.DOWN) { this.renderer.MousePress(m.x, m.y); }
+        if (m.type === MOUSE_TYPE.CLICK) { this.renderer.MouseClick(m.x, m.y); }
+        if (m.type === MOUSE_TYPE.DRAG) { this.renderer.MouseDrag(m.x, m.y); }
         else { this.renderer.MouseMove(m.x, m.y); }
     }
     public KeyEvent(k: NJSAPI.NVisCanvasSandbox.KeyboardEventData) {

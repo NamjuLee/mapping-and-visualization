@@ -3,6 +3,7 @@ import { NPoint } from './Geometry/NPoint';
 
 export class Renderer {
     app: NVisCanvasSandbox;
+    isStationary: boolean = false;
 
     p: NPoint[] = [];
 

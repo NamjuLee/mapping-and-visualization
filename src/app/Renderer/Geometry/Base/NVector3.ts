@@ -3,6 +3,7 @@ export class NVector3 {
     static eps: number = 0.0000001;
     static origin: NVector3 = new NVector3(0, 0, 0);
 
+    
     x: number = 0.0;
     y: number = 0.0;
     z: number = 0.0;
@@ -16,7 +17,7 @@ export class NVector3 {
     alt: number = 0.0;
     d: boolean = true;
     isModified: boolean = false;
-
+    isRenderable: boolean = true;
     // tslint:disable-next-line:no-any
     parent: any;
 
