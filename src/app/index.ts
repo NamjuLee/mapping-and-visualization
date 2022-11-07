@@ -8,6 +8,8 @@ import { MOUSE_TYPE } from './Core/EventInteraction';
 
 import { Renderer } from './Renderer/RendererClustering';
 
+import { version } from 'njscore';
+
 export default class NVisCanvasSandbox {
     mapView: MapView;
     map: ArcGISMap;
@@ -20,6 +22,7 @@ export default class NVisCanvasSandbox {
     eventInteraction: EventInteraction;
     renderer: Renderer;
     public static start(view: MapView) {
+        console.log('njscore', version);
         new NVisCanvasSandbox(view);
     }
     constructor(view: MapView) {

@@ -130,7 +130,7 @@ class Cell {
         ctx.closePath();
         ctx.stroke();
 
-        console.log(isPanning)
+        // console.log(isPanning)
         if (!this.isRenderable) { return; }
         if (isPanning) {
             this.vecRender = new NVector3(0, 0, 0);

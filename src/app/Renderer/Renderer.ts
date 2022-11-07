@@ -13,7 +13,7 @@ export class Renderer {
         this.app = app;
     }
     public MouseMove(x: number, y: number) {
-        console.log(x, y);
+        // console.log(x, y);
     }
     public MousePress(x: number, y: number) {
         const p = new NPoint(this, x, y);

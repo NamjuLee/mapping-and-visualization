@@ -1,16 +1,26 @@
 {
   "name": "demo",
   "version": "0.0.1",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "npm run start",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production --display-origins --display-provided-exports --display-reasons --json > stats.json",
+    "profile": "webpack --profile --json > stats.json",
+    "serve": "webpack-dev-server --mode production --open --https --compress",
+    "prettier": "prettier --write \"src/**/*.ts?(x)\"",
+    "lint": "tslint --fix \"src/**/*.ts?(x)\""
+  },
   "devDependencies": {
     "@theintern/istanbul-loader": "^1.0.0-beta.2",
     "@types/sinon": "^7.0.13",
+    "node-sass": "^4.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "~5.1.1",
     "css-loader": "^3.4.2",
+    "mini-css-extract-plugin": "^0.9.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "~7.0.0",
     "prettier": "^1.19.1",
     "resolve-url-loader": "^2.3.1",
     "sass-loader": "8.0.2",
@@ -25,17 +35,8 @@
     "typescript": "^3.0.3",
     "webpack": "^4.41.5",
     "webpack-cli": "~3.3.10",
-    "webpack-dev-server": "^3.10.2"
-  },
-  "license": "Apache-2.0",
-  "scripts": {
-    "dev": "npm run start",
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production --display-origins --display-provided-exports --display-reasons --json > stats.json",
-    "profile": "webpack --profile --json > stats.json",
-    "serve": "webpack-dev-server --mode production --open --https --compress",
-    "prettier": "prettier --write \"src/**/*.ts?(x)\"",
-    "lint": "tslint --fix \"src/**/*.ts?(x)\""
+    "webpack-dev-server": "^3.10.2",
+    "njscore": "0.0.31"
   },
   "dependencies": {
     "@arcgis/webpack-plugin": "~4.13.0"

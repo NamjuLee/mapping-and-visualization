@@ -21,7 +21,7 @@ export class Renderer {
         this.clustering = new Clustering()
     }
     public MouseMove(x: number, y: number) {
-        console.log(x, y);
+        // console.log(x, y);
         this.clustering.mouseInteraction(x,y);
 
     }
@@ -37,7 +37,7 @@ export class Renderer {
 
     }
     public KeyPress(k: string) {
-        console.log(k);
+        // console.log(k);
     }
     public Start(ctx: CanvasRenderingContext2D) {
         // console.log(usZip);

@@ -42,18 +42,18 @@ export class GridSystemDynamic {
             if (this.maxP.y < v.y) { this.maxP.y = v.y; }
             if (this.maxP.z < v.z) { this.maxP.z = v.z; }
         }
-        console.log(this);
+        // console.log(this);
 
         this.cells = [];
         this.width = (this.maxP.x - this.minP.x);
         this.height = (this.maxP.y - this.minP.y);
 
-        console.log('width', this.width, 'height', this.height)
+        // console.log('width', this.width, 'height', this.height)
 
         this.xInterval = this.width / (this.rx - 1);
         this.yInterval = this.height / (this.ry - 1);
         
-        console.log('this.xInterval', this.xInterval, 'this.yInterval', this.yInterval)
+        // console.log('this.xInterval', this.xInterval, 'this.yInterval', this.yInterval)
 
         for(let y = 0; y < this.ry; y++){
             const cellList: Cell[] = [];
@@ -119,7 +119,7 @@ class Cell {
     this.xI = xI;
     this.yI = yI;
     this.vec = new NVector3(grid.minP.x + (xI * this.grid.xInterval), grid.minP.y + (yI * this.grid.yInterval));
-    console.log('x', this.vec.x, 'y', this.vec.y, )
+    // console.log('x', this.vec.x, 'y', this.vec.y, )
     // this.geometries = [];
     }
     public push(geo: NVector3){
